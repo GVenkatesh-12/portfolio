@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #023047;
+    --primary-color-tint: #8ecae6;
+    --primary-color-shade: #001825;
+    --secondary-color: #ffb703;
+    --secondary-color-tint: #ffd65d;
+    --secondary-color-shade: #e69800;
+    --tertiary-color: #219ebc;
+    --tertiary-color-tint: #63c7e9;
+    --tertiary-color-shade: #007b9e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color-tint);
+}
+
+body::selection {
+    background-color: var(--secondary-color);
+    color: var(--primary-color-shade);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--primary-color-shade);
+}
+
+p {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary-color-shade);
+}
+
+a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+a:link, a:visited {
+    color: var(--primary-color);
+}
+
+a:hover, a:active {
+    color: var(--primary-color-shade);
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.highlight {
+    background-color: var(--secondary-color);
+    display: inline-block;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    width: 9rem;
+    text-align: center;
+    position: relative;
+}
+
+.highlight span {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.highlight.animate span {
+    animation: fadeInOut 4s ease-in-out;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: 100vh;
+}
+
+ul {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    align-self: start;
+    justify-self: start;
+}
+
+img {
+    grid-row: 1/ span 2;
+    width: 70rem;
+    object-fit: cover;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+margin-left: 0.6rem;
+}
+
+  
+
+

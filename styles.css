@@ -156,7 +156,7 @@ img {
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 31.25rem) {
     html {
-        font-size: 50%;
+        font-size: 62.5%;
     }
     .container {
         grid-template-columns: 1fr;

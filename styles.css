@@ -1,3 +1,4 @@
+/* ===== VARIABLES ===== */
 :root {
     --primary-color: #023047;
     --primary-color-tint: #8ecae6;
@@ -10,10 +11,15 @@
     --tertiary-color-shade: #007b9e;
 }
 
+/* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
@@ -26,10 +32,7 @@ body::selection {
     color: var(--primary-color-shade);
 }
 
-html {
-    font-size: 62.5%;
-}
-
+/* ===== TYPOGRAPHY ===== */
 h1 {
     font-size: 6rem;
     font-weight: 700;
@@ -47,17 +50,6 @@ a {
     font-size: 2rem;
 }
 
-.btn {
-    background-color: var(--secondary-color);
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    display: inline-block;
-}
-
-li {
-    list-style: none;
-}
-
 a:link, a:visited {
     color: var(--primary-color);
 }
@@ -69,6 +61,36 @@ a:hover, a:active {
     transform: scale(1.1);
 }
 
+/* ===== BUTTONS ===== */
+.btn {
+    background-color: var(--secondary-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    margin-left: 0.6rem;
+}
+
+/* ===== LISTS ===== */
+li {
+    list-style: none;
+}
+
+ul {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    align-self: start;
+    justify-self: start;
+}
+
+/* ===== HIGHLIGHT ===== */
 .highlight {
     background-color: var(--secondary-color);
     display: inline-block;
@@ -84,6 +106,7 @@ a:hover, a:active {
     transition: all 0.3s ease-in-out;
 }
 
+/* ===== ANIMATIONS ===== */
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -107,6 +130,7 @@ a:hover, a:active {
     animation: fadeInOut 4s ease-in-out;
 }
 
+/* ===== LAYOUT ===== */
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -122,28 +146,35 @@ a:hover, a:active {
     height: 100vh;
 }
 
-ul {
-    grid-row: 2/3;
-    grid-column: 1/2;
-    align-self: start;
-    justify-self: start;
-}
-
 img {
     grid-row: 1/ span 2;
     width: 70rem;
     object-fit: cover;
 }
 
-.btn-container {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn-primary {
-margin-left: 0.6rem;
-}
-
   
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 31.25rem) {
+    html {
+        font-size: 50%;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 1rem;
+    }
+        
+    img {
+        grid-row: auto;
+    }
+    
+    ul {
+        align-self: auto;
+        justify-self: auto;
+    }
 
+    .btn-primary {
+        margin-left: 0rem;
+    }
 
+}

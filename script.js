@@ -1,30 +1,27 @@
-// Initial animation
-document.getElementById("switch").classList.add("animate");
+// Update time every second
+setInterval(() => {
+    document.querySelector(".time").innerHTML = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}, 1000);
 
-//Use jQuery
-let switchWords = ["passion", "love", "hobby"];
-let switchIndex = 0;
-let switchInterval = setInterval(function() {
-    const switchElement = document.getElementById("switch");
-    // Remove animate class first
-    switchElement.classList.remove("animate");
-    // Change the text
-    switchElement.querySelector("span").innerHTML = switchWords[switchIndex];
-    // Add animate class after a small delay to trigger the animation
-    setTimeout(() => {
-        switchElement.classList.add("animate");
-    }, 50);
-    
-    switchIndex++;
-    if (switchIndex >= switchWords.length) {
-        switchIndex = 0;
-    }
-}, 2500);
+//content for the clipbord
+const email = "gvenkatesh.on.dev@gmail.com";
+const changeContentHTML = `
+  <div class="flex items-center justify-center gap-2">
+    <span id="email-text">${email}</span>
+    <i class="bi bi-copy hover:text-[#07bdeb6b]" id="copy-icon"></i>
+  </div>
+`;
 
-// Play sound on button click
-$(".btn").click(function() {
-    const audio = new Audio("./assets/audio/click.mp3");
-    audio.play();
+document.getElementById("toggle-contact").addEventListener("click", () => {
+    document.getElementById("contact-me").innerHTML = changeContentHTML;
+
+    // Attach event listener to the new copy icon
+    document.getElementById("copy-icon").addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents the parent button click
+        navigator.clipboard.writeText(email);
+        document.getElementById("email-text").innerHTML = "Copied!";
+        setTimeout(() => {
+            document.getElementById("email-text").innerHTML = email;
+        }, 1000);
+    });
 });
-
-

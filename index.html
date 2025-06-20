@@ -5,24 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>G Venkatesh Portfolio</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-    <div class="container">
-        <div>
-            <h1>I'm Venkatesh</h1>
-            <p>a engineer with a <span id="switch" class="highlight"><span>passion</span></span> for building web applications.</p>
+<body class="text-white">
+    <header class="max-w-5xl mx-auto">
+        <nav class="flex flex-col sm:flex-row gap-5 sm:gap-0 justify-between items-center p-4">
+            <div class="time text-2xl p-2 rounded-full border border-[#34353C] tracking-wide"></div>
+            <ul class="flex gap-4 text-2xl">
+                <li class="hover:bg-gray-700 rounded-full w-12 h-12 flex items-center justify-center"><a href="https://github.com/gvenkatesh-12" target="_blank"><i class="bi bi-github"></i></a></li>
+                <li class="hover:bg-gray-700 rounded-full w-12 h-12 flex items-center justify-center"><a href="https://www.linkedin.com/in/gvenkatesh-in/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                <li class="hover:bg-gray-700 rounded-full w-12 h-12 flex items-center justify-center"><a href="https://x.com/gvenkatesh_12" target="_blank"><i class="bi bi-twitter-x"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="max-w-5xl px-4 sm:px-0 mx-auto py-7">
+        <div class="flex flex-col items-center justify-center">
+            <h1 class="text-6xl font-bold font-['Kaushan_Script']">I'm Venkatesh</h1>
+            <p class="text-2xl mt-5 font-['Space_Mono'] text-pretty text-center">a engineer with a <span id="switch" class="highlight">passion</span> for building web applications.</p>
         </div>
-        <ul class="btn-container">
-            <!-- Link in new tab -->
-            <li><a class="btn btn-primary" href="https://www.linkedin.com/in/gvenkatesh-in/" target="_blank" draggable="true">LinkedIn</a></li>
-            <li><a class="btn" href="https://github.com/gvenkatesh-12" target="_blank" draggable="true">GitHub</a></li>
-        </ul>
-        <img src="./assets/images/hero-main.gif" alt="random image">
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </section>
+
+    <section class="max-w-5xl mx-auto py-4">
+        <!-- Languages -->
+         <div class="flex flex-col items-center justify-center">
+            <h2 class="text-2xl font-semibold mb-6 text-shadow-lg/30">Technologies I Use</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-10">
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                </div>
+                <div class="bg-[#01030b7c] rounded-lg p-4 icon-shadow">    
+                    <img class="w-10 h-10 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
+                </div>
+         </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto py-8">
+        <div class="flex flex-col items-center justify-center" id="toggle-contact">
+            <button class="bg-[#01030b7c] rounded-full px-4 py-2 text-xl icon-shadow" id="contact-me">
+                <p class="text-2xl">Contact Me</p>
+            </button> 
+        </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>
